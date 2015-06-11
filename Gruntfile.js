@@ -121,7 +121,6 @@ module.exports = function(grunt) {
     'concat',
     'uglify',
     'cssmin',
-    'test'
   ]);
 
   grunt.registerTask('upload', function(n) {
