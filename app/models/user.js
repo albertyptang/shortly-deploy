@@ -1,6 +1,6 @@
+var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
-var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
   username: { type: String, index: { unique:true } },
@@ -23,6 +23,6 @@ userSchema.pre('save', function(next){
       this.password = hash;
       next(); 
   });
-}
+});
 
 module.exports = User;

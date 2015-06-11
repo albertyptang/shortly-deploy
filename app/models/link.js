@@ -17,6 +17,6 @@ linkSchema.pre('save', function(next){
   shasum.update(this.url);
   this.code = shasum.digest('hex').slice(0, 5);
   next(); 
-}
+});
 
 module.exports = Link;
