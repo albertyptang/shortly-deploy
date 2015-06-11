@@ -6,6 +6,10 @@ module.exports = function(grunt) {
       dist: {
         src: ['public/client/*.js'],
         dest: 'public/dist/build.js'
+      },
+      lib: {
+        src: ['public/lib/*.js'],
+        dest: 'public/lib/build.js'
       }
     },
 
@@ -25,7 +29,14 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      target: []
+      dist: {
+        src: 'public/dist/build.js',
+        dest: 'public/dist/build-min.js'
+      },
+      lib: {
+        src: 'public/lib/build.js',
+        dest: 'public/lib/build-min.js'
+      }
     },
 
     jshint: {
@@ -43,6 +54,10 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      pub: {
+        src: 'public/style.css',
+        dest: 'public/style-min.css'
+      }
     },
 
     watch: {
@@ -112,7 +127,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
-    'concat'
+    'concat',
+    'uglify',
+    'cssmin'
   ]);
 
   // grunt.registerTask('default' , [
