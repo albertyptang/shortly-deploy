@@ -133,11 +133,11 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('deploy', [
-    // add your deploy tasks here
-    // 'build',
+    add your deploy tasks here
+    'build',
   ]);
 
-  // grunt.registerTask('default' , [
-  //   'deploy'
-  // ]);
+  grunt.registerTask('default' , [
+    'deploy'
+  ]);
 };
