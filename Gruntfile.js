@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       },
       lib: {
         src: ['public/lib/jquery.js','public/lib/underscore.js', 'public/lib/backbone.js', 'public/lib/handlebars.js'],
-        dest: 'public/lib/build.js'
+        dest: 'public/dist/lib.js'
       }
     },
 
@@ -34,8 +34,8 @@ module.exports = function(grunt) {
         dest: 'public/dist/build-min.js'
       },
       lib: {
-        src: 'public/lib/build.js',
-        dest: 'public/lib/build-min.js'
+        src: 'public/dist/lib.js',
+        dest: 'public/dist/lib-min.js'
       }
     },
 
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
     cssmin: {
       pub: {
         src: 'public/style.css',
-        dest: 'public/style-min.css'
+        dest: 'public/dist/style-min.css'
       }
     },
 
@@ -115,6 +115,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'test'
   ]);
 
   grunt.registerTask('upload', function(n) {
@@ -132,8 +133,7 @@ module.exports = function(grunt) {
     'cssmin'
   ]);
 
-  // grunt.registerTask('default' , [
-  //   'deploy',
-  //   'build'
-  //   ]);
+  grunt.registerTask('default' , [
+    'deploy'
+  ]);
 };
