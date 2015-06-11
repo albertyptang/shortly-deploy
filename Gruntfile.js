@@ -115,7 +115,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'test'
+    // 'test'
   ]);
 
   grunt.registerTask('upload', function(n) {
